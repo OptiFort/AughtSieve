@@ -1,5 +1,4 @@
 using AughtSieve.Client.Pages;
-using AughtSieve.Components;
 
 namespace AughtSieve
 {
@@ -10,14 +9,22 @@ namespace AughtSieve
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddRazorComponents()
-                .AddInteractiveWebAssemblyComponents();
-
+            builder.Services.AddRazorComponents();
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages();
+            //builder.Services.AddEntityFrameworkNpgsql().AddDbContext<Server.ApplicationDbContext>().BuildServiceProvider();
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+
                 app.UseWebAssemblyDebugging();
             }
             else
@@ -27,15 +34,17 @@ namespace AughtSieve
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-
+            app.UseAuthentication();
+            app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
-            app.UseAntiforgery();
 
-            app.MapRazorComponents<App>()
-                .AddInteractiveWebAssemblyRenderMode()
-                .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
+            app.UseRouting();
 
+
+            app.MapRazorPages();
+
+            app.MapControllers();
+            app.MapFallbackToFile("index.html");
             app.Run();
         }
     }

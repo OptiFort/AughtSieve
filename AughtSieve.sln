@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve", "AughtSieve\AughtSieve\AughtSieve.csproj", "{6E4CCF74-2E57-4149-8821-F27D6C626241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve.Server", "AughtSieve\AughtSieve\AughtSieve.Server.csproj", "{6E4CCF74-2E57-4149-8821-F27D6C626241}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve.Client", "AughtSieve\AughtSieve.Client\AughtSieve.Client.csproj", "{28C25BC2-0D7C-4843-A23C-95B7D6384A3C}"
 EndProject
