@@ -10,6 +10,8 @@ namespace AughtSieve.Server
             var builder = WebApplication.CreateBuilder(args);
              builder.Services.AddDbContext<ApplicationDbContext<IdentityUser>>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("ApplicationDBContext")));
+            builder.Services.AddControllersWithViews();
+
             builder.Services.AddAuthorization();
             builder.Services.AddIdentityApiEndpoints<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext<IdentityUser>>();
