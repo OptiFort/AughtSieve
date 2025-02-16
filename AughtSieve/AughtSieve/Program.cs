@@ -16,6 +16,10 @@ namespace AughtSieve.Server
             builder.Services.AddIdentityApiEndpoints<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext<IdentityUser>>();
             
+
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -42,8 +46,11 @@ namespace AughtSieve.Server
             app.UseStaticFiles();
 
             app.UseRouting();
-            
+
+            app.MapRazorPages();
+
             app.UseAuthorization();
+
 
             app.MapIdentityApi<IdentityUser>();
 
