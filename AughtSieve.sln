@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve.Server", "AughtSieve\AughtSieve\AughtSieve.Server.csproj", "{6E4CCF74-2E57-4149-8821-F27D6C626241}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve.Proxy", "AughtSleve.Proxy\AughtSieve.Proxy.csproj", "{2501AA2D-7043-4E6B-BEA3-62DDC9BD1188}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve.Capture", "AughtSieve.Capture\AughtSieve.Capture.csproj", "{EFF52850-5E4D-4FD7-84FC-20E788225757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AughtSieve.Desktop", "AughtSieve.Desktop\AughtSieve.Desktop.csproj", "{9244B79D-BE11-4AAF-A439-84F37292F720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EFF52850-5E4D-4FD7-84FC-20E788225757}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF52850-5E4D-4FD7-84FC-20E788225757}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF52850-5E4D-4FD7-84FC-20E788225757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9244B79D-BE11-4AAF-A439-84F37292F720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9244B79D-BE11-4AAF-A439-84F37292F720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9244B79D-BE11-4AAF-A439-84F37292F720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9244B79D-BE11-4AAF-A439-84F37292F720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
