@@ -1,18 +1,25 @@
-using AughtSieve.Client.Pages;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
-namespace AughtSieve
+namespace AughtSieve.Server
 {
     public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+             builder.Services.AddDbContext<ApplicationDbContext<IdentityUser>>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("ApplicationDBContext")));
+            builder.Services.AddControllersWithViews();
 
-            // Add services to the container.
-            builder.Services.AddRazorComponents();
+            builder.Services.AddAuthorization();
+            builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext<IdentityUser>>();
+            
+
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
-            //builder.Services.AddEntityFrameworkNpgsql().AddDbContext<Server.ApplicationDbContext>().BuildServiceProvider();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -40,11 +47,14 @@ namespace AughtSieve
 
             app.UseRouting();
 
-
             app.MapRazorPages();
 
+            app.UseAuthorization();
+
+
+            app.MapIdentityApi<IdentityUser>();
+
             app.MapControllers();
-            app.MapFallbackToFile("index.html");
             app.Run();
         }
     }
